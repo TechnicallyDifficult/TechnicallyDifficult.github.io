@@ -1,0 +1,73 @@
+main {
+	text-align: center;
+}
+
+h2 {
+	padding-left: 10px;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+h4 {
+	font-size: 20px;
+	margin-bottom: 0;
+}
+
+p {
+	margin: 0 0 5px;
+}
+
+input:focus, .btn:focus, .btn:active, .btn:active:focus {
+	outline: none;
+}
+
+.address-container {
+	text-align: left;
+}
+
+.day-forecast {
+	width: 225px;
+	background-color: white;
+	border: 1px solid #aaa;
+	display: inline-block;
+	font-size: 12px;
+	margin: 10px;
+	border-radius: 5px;
+}
+
+.main-container {
+	display: inline-block;
+	background-color: #abdcfd;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.icon {
+	margin: 0;
+}
+
+.latlng {
+	width: initial;
+}
+
+.form-container {
+	display: inline-block;
+	text-align: left;
+}
+
+.form-group {
+	margin: 20px;
+}
+
+#forecast-container {
+	display: inline-block;
+	margin: 20px;
+}
+
+#map-canvas {
+	width: 770px;
+	height: 500px;
+	margin: auto;
+	border: 1px solid #aaa;
+	border-radius: 5px;
+}

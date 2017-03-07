@@ -1,0 +1,32 @@
+article {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+button, article {
+    margin: 10px;
+}
+
+time {
+    float: right;
+}
+
+.categories, footer, time {
+    color: #aaa;
+}
+
+.categories:hover {
+    color: #8bc34a;
+}
+
+.categories:active {
+    color: #8bc34a;
+    background-color: #ddd;
+}
+
+.categories:focus {
+    color: black;
+    background-color: #aaa;
+    outline: none;
+}

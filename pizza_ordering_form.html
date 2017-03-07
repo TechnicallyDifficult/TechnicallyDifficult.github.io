@@ -1,0 +1,219 @@
+<!-- Make a form for ordering pizza
+with as many real-world options as you can think of! -->
+
+<!--
+*Crust                       Dropdown
+*Size                        Radio
+*Sauce type                  Dropdown
+*Sauce ammount               Radio
+*Toppings                    Grouped checkboxes with radio buttons for "both sides", "half 1", and "half 2"
+*Cheese ammount              Radio
+*Well-done?                  Checkbox
+*Cut how?                    Dropdown
+*Other topings               Grouped checkboxes
+*Sides?                      Grouped checkboxes
+*Deserts?                    Grouped checkboxes
+*Drink                       Dropdown
+*Special instructions?       Textarea
+*Carry-out or Delivery?      Radio
+*Payment type                Dropdown
+*Submit order button         button
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Order Form</title>
+        <link rel='stylesheet' href='./css/pizza.css'>
+    </head>
+    <body>
+
+        <main>
+            <h1>Please Place Your Order</h1>
+            <hr>
+            <form method='POST' action='./my_first_form.php'>
+                <p>
+                    <h3><label for='crust'>Crust:</label></h3>
+                    <select id='crust' name='crust'>
+                        <option>Regular</option>
+                        <option>Thin</option>
+                        <option>Pan</option>
+                    </select>
+                </p>
+                <hr>
+                <p>
+                    <h3>Size:</h3>
+                    <label>
+                        <input type='radio' name='size' value='small'>
+                        Small
+                    </label>
+                    <label>
+                        <input type='radio' name='size' value='medium'>
+                        Medium
+                    </label>
+                    <label>
+                        <input type='radio' name='size' value='large' checked>
+                        Large
+                    </label>
+                    <label>
+                        <input type='radio' name='size' value='xl'>
+                        Extra Large
+                    </label>
+                </p>
+                <hr>
+                <p>
+                    <h3><label for='sauce'>Sauce:</label></h3>
+                    <select id='sauce' name='sauce'>
+                        <option>Regular</option>
+                        <option>Spinach Alfredo</option>
+                        <option>Barbecue</option>
+                    </select>
+                </p>
+                <p>
+                    <label>
+                        <input type='radio' name='sauce_amount' value='rs' checked>
+                        Regular
+                    </label>
+                    <label>
+                        <input type='radio' name='sauce_amount' value='xs'>
+                        Extra Sauce
+                    </label>
+                    <label>
+                        <input type='radio' name='sauce_amount' value='ls'>
+                        Light Sauce
+                    </label>
+                </p>
+                <hr>
+                <h3>Toppings:</h3>
+                <p>
+                    <p><input type='checkbox' name='toppings[]' id='it' value='italian_sausage'>
+                    <label for='it'>Italian Sausage</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='sa' value='sausage'>
+                    <label for='sa'>Sausage</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='be' value='beef'>
+                    <label for='be'>Beef</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='ba' value='bacon'>
+                    <label for='ba'>Bacon</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='ck' value='chicken'>
+                    <label for='ck'>Chicken</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='mu' value='mushroom'>
+                    <label for='mu'>Mushrooms</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='gp' value='green_pepper'>
+                    <label for='gp'>Green Peppers</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='on' value='onion'>
+                    <label for='on'>Onions</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='pi' value='pineapple'>
+                    <label for='pi'>Pineapples</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='to' value='tomato'>
+                    <label for='to'>Tomatoes</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='bo' value='black_olive'>
+                    <label for='bo'>Black Olives</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='jp' value='jalapeno'>
+                    <label for='jp'>Jalapenos</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='pe' value='pepperoni'>
+                    <label for='pe'>Pepperoni</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='bp' value='banana_pepper'>
+                    <label for='bp'>Banana Peppers</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='an' value='anchovy'>
+                    <label for='an'>Anchovies</label></p>
+                </p>
+                <hr>
+                <h3>Cheese:</h3>
+                <p>
+                    <label>
+                        <input type='radio' name='cheese_amount' value='rc' checked>
+                        Regular
+                    </label>
+                    <label>
+                        <input type='radio' name='cheese_amount' value='xc'>
+                        Extra Cheese
+                    </label>
+                    <label>
+                        <input type='radio' name='cheese_amount' value='lc'>
+                        Light Cheese
+                    </label>
+                </p>
+                <hr>
+                <p>
+                    <h3><label for='cut'>Cut:</label></h3>
+                    <select id='cut' name='cut'>
+                        <option>Regular</option>
+                        <option>Double Cut</option>
+                        <option>Chicago Cut</option>
+                    </select>
+                </p>
+                <hr>
+                <h3>Other:</h3>
+                <p>
+                    <input type='checkbox' id='well_done' name='well_done'>
+                    <label for='well_done'>Well-done</label>
+                </p>
+                <p>
+                    <input type='checkbox' name='misc_topings[]' id='parmesan' value='parmesan'>
+                    <label for='paremsan'>Parmesan</label>
+                    <input type='checkbox' name='misc_toppings[]' id='oregano' value='oregano'>
+                    <label for='oregano'>Oregano</label>
+                </p>
+                <hr>
+                <h3>Sides:</h3>
+                <p>
+                    <p><input type='checkbox' name='sides[]' id='cheese_sticks' value='cheese_sticks'>
+                    <label for='cheese_sticks'>Cheese Sticks</label></p>
+                    <p><input type='checkbox' name='sides[]' id='wings' value='wings'>
+                    <label for='wings'>Wings</label></p>
+                    <p><input type='checkbox' name='sides[]' id='chicken_poppers' value='chicken_poppers'>
+                    <label for='chicken_poppers'>Chicken Poppers</label></p>
+                    <p><input type='checkbox' name='sides[]' id='garlic_knots' value='garlic_knots'>
+                    <label for='garlic_knots'>Garlic Knots</label></p>
+                </p>
+                <hr>
+                <h3>Desserts:</h3>
+                <p>
+                    <p><input type='checkbox' name='toppings[]' id='chck' value='cookie'>
+                    <label for='chck'>Chocolate Chip Cookie</label></p>
+                    <p><input type='checkbox' name='toppings[]' id='dcbr' value='brownie'>
+                    <label for='dcbr'>Double Chocolate Brownie</label></p>
+                </p>
+                <hr>
+                <p>
+                    <h3><label for='drink'>Drink:</label></h3>
+                    <select id='drink' name='drink'>
+                        <option>None</option>
+                        <option>Small</option>
+                        <option>Large</option>
+                    </select>
+                </p>
+                <hr>
+                <p>
+                    <h3><label for='special_instructions'>Special Instructions:</label></h3>
+                    <textarea id='special_instructions' name='special_instructions' placeholder='Special Instructions' rows='4' cols='40'></textarea>
+                </p>
+                <hr>
+                <p>
+                    <h3>Carry-Out or Delivery?</h3>
+                    <label>
+                        <input type='radio' name='carryout_delivery' value='carryout'>
+                        Carry-Out
+                    </label>
+                    <label>
+                        <input type='radio' name='carryout_delivery' value='delivery'>
+                        Delivery
+                    </label>
+                </p>
+                <hr>
+                <p>
+                    <h3>Payment Type:</h3>
+                    <select name='payment_type'>
+                        <option>Cash</option>
+                        <option>Check</option>
+                        <option>Credit Card</option>
+                    </select>
+                </p>
+                <hr>
+                <p>
+                    <button type='submit'>Submit Order</button>
+                </p>
+            </form>
+        </main>
+    </body>
+</html>

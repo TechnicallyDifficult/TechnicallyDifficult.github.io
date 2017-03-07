@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Konami Code</title>
+        <style>
+            @font-face {
+                src: url('./fonts/prstartk.ttf');
+            }
+            body {
+                font-family: sans-serif;
+            }
+            #konami-code {
+                position: relative;
+                top: -54px;
+            }
+            #shadow {
+                color: white;
+                position: relative;
+                top: 3px;
+                left: 3px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id='shadow'>Lives x 3</h1>
+        <h1 id='konami-code'>Konami Code...</h1>
+
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js' integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=' crossorigin='anonymous'></script>
+        <script>
+            'use strict';
+
+            var keylog = [],
+                complete = false,
+                lives = 3,
+                bonus = new Audio('./sounds/bonus.wav'),
+                life = new Audio('./sounds/1up.wav'),
+                win = new Audio('./sounds/win.wav')
+
+            $(document).keyup(function(event){
+                console.log(event.key);
+                if (!complete) {
+                    if (keylog.length < 10) {
+                        keylog.push(event.key);
+                    } else {
+                        keylog.shift();
+                        keylog.push(event.key);
+                    }
+                    if (keylog.join(' ') == 'ArrowUp ArrowUp ArrowDown ArrowDown ArrowLeft ArrowRight ArrowLeft ArrowRight b a') {
+                        console.log('sequence complete');
+                        $('#konami-code, #shadow').html('Lives x ' + lives);
+                        $('body').css({
+                            'font-family': 'Press Start K',
+                            'background-color': '#6d8ffc',
+                            'color': 'white'
+                        });
+                        $('#shadow').css('color', 'black');
+                        bonus.play();
+                        setTimeout(function () {
+                            var intervalId = setInterval(function increaseLives() {
+                                if (lives < 30) {
+                                    lives++;
+                                    $('#konami-code, #shadow').html('Lives x ' + lives);
+                                    if (lives <= 29) {
+                                        life.play();
+                                    } else {
+                                        win.play();
+                                    }
+                                } else {
+                                    clearInterval(intervalId);
+                                }
+                            }, 900);
+                        complete = true;
+                        }, 1000);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
