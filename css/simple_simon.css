@@ -1,0 +1,243 @@
+@keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeToBlack {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: black;
+    }
+}
+
+body {
+    user-select: none;
+    font-size: 0;
+    cursor: default;
+}
+
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+}
+
+.game-btn {
+    height: 444px;
+    width: 444px;
+    border: 3px solid;
+    float: left;
+    position: relative;
+}
+
+.life-corner {
+    height: 0px;
+    width: 0px;
+    border: 1px solid;
+    float: left;
+}
+
+.corner-top-left {
+    border-top-left-radius: 32px;
+}
+
+.corner-top-right {
+    border-top-right-radius: 32px;
+}
+
+.corner-bottom-left {
+    border-bottom-left-radius: 32px;
+    clear: left;
+}
+
+.corner-bottom-right {
+    border-bottom-right-radius: 32px;
+}
+
+.life {
+    float: left;
+    margin: 0 8px;
+    height: 32px;
+    width: 32px;
+    position: relative;
+    top: 16px;
+    left: 16px;
+}
+
+.enabled-btn:active {
+    box-shadow: 0 16px 16px rgba(0,0,0,0.4) inset;
+}
+
+.brick {
+    border: 2px solid;
+    display: inline-block;
+    height: 32px;
+    width: 100px;
+    position: relative;
+    top: 20px;
+}
+
+.red {
+    background-color: #ea4335;
+    border-color: #AB3127;
+}
+
+.yellow {
+    background-color: #fbbc05;
+    border-color: #B78904;
+}
+
+.green {
+    background-color: #34a853;
+    border-color: #267B3D;
+}
+
+.blue {
+    background-color: #4285f4;
+    border-color: #3161B2;
+}
+
+.hidden-brick {
+    border: none;
+    background-color: transparent;
+}
+
+.fade-to-black {
+    -webkit-animation: fadeToBlack 1s linear 1;
+    -moz-animation: fadeToBlack 1s linear 1;
+    -o-animation: fadeToBlack 1s linear 1;
+    animation: fadeToBlack 1s linear 1;
+}
+
+#r-btn {
+    border-radius: 50%;
+}
+
+#y-btn {
+    width: 220px;
+    border-top-right-radius: 444px;
+    border-bottom-right-radius: 444px;
+    top: -1000px;
+}
+
+#g-btn, #b-btn {
+    height: 220px;
+    width: 220px;
+}
+
+#g-btn {
+    border-bottom-left-radius: 220px;
+    left: -2000px;
+    clear: left;
+}
+
+#b-btn {
+    border-bottom-right-radius: 220px;
+    right: -2000px;
+}
+
+#paddle-container {
+    position: absolute;
+    bottom: 30px;
+    width: 1000px;
+}
+
+#paddle {
+    background-color: #4D5057;
+    border: 2px solid #393B40;
+    height: 0;
+    width: 0;
+    position: relative;
+    bottom: 12px;
+    left: 564px;
+}
+
+#field {
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#button-container {
+    height: 444px;
+    width: 444px;
+    position: relative;
+    top: 78px;
+    left: 278px;
+}
+
+#bricks-container {
+    position: absolute;
+    top: 48px;
+}
+
+#lives-container {
+    position: fixed;
+    top: 2px;
+    left: 2px;
+}
+
+#round-counter {
+    position: fixed;
+    top: 0px;
+    right: 8px;
+    font-size: 30px;
+}
+
+#gameover-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+#gameover-text {
+    font-size: 64px;
+    color: white;
+    opacity: 0;
+}
+
+#startagain-text {
+    font-size: 32px;
+    color: white;
+    opacity: 0;
+}
+
+.lit-btn#r-btn, .enabled-btn#r-btn:active {
+    background-color: #EF766C;
+}
+
+.lit-btn#y-btn, .enabled-btn#y-btn:active {
+    background-color: #FCCE49;
+}
+
+.lit-btn#g-btn, .enabled-btn#g-btn:active {
+    background-color: #6BBF81;
+}
+
+.lit-btn#b-btn, .enabled-btn#b-btn:active {
+    background-color: #75A6F7;
+}
