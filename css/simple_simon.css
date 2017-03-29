@@ -26,7 +26,6 @@
 
 body {
     user-select: none;
-    font-size: 0;
     cursor: default;
 }
 
@@ -43,13 +42,6 @@ body {
     border: 3px solid;
     float: left;
     position: relative;
-}
-
-.life-corner {
-    height: 0px;
-    width: 0px;
-    border: 1px solid;
-    float: left;
 }
 
 .corner-top-left {
@@ -70,13 +62,18 @@ body {
 }
 
 .life {
+    height: 4px;
+    width: 4px;
+    margin: auto;
+    position: relative;
+    top: 14px;
+}
+
+.life-outer {
     float: left;
     margin: 0 8px;
     height: 32px;
     width: 32px;
-    position: relative;
-    top: 16px;
-    left: 16px;
 }
 
 .enabled-btn:active {
@@ -85,14 +82,12 @@ body {
 
 .brick {
     border: 2px solid;
-    display: inline-block;
     height: 32px;
     width: 100px;
-    position: relative;
-    top: 20px;
+    position: absolute;
 }
 
-.red {
+.red, .life>div.red {
     background-color: #ea4335;
     border-color: #AB3127;
 }
@@ -112,16 +107,20 @@ body {
     border-color: #3161B2;
 }
 
-.hidden-brick {
-    border: none;
-    background-color: transparent;
-}
-
 .fade-to-black {
     -webkit-animation: fadeToBlack 1s linear 1;
     -moz-animation: fadeToBlack 1s linear 1;
     -o-animation: fadeToBlack 1s linear 1;
     animation: fadeToBlack 1s linear 1;
+    animation-fill-mode: forwards;
+}
+
+.life>div {
+    height: 0px;
+    width: 0px;
+    border-width: 1px;
+    border-style: solid;
+    float: left;
 }
 
 #r-btn {
@@ -151,10 +150,11 @@ body {
     right: -2000px;
 }
 
-#paddle-container {
+#paddle-outer {
     position: absolute;
-    bottom: 30px;
-    width: 1000px;
+    height: 24px;
+    width: 128px;
+    top: 546px;
 }
 
 #paddle {
@@ -163,8 +163,8 @@ body {
     height: 0;
     width: 0;
     position: relative;
-    bottom: 12px;
-    left: 564px;
+    top: 12px;
+    margin: auto;
 }
 
 #field {
@@ -174,17 +174,19 @@ body {
     position: relative;
 }
 
-#button-container {
+#button-inner {
     height: 444px;
     width: 444px;
     position: relative;
-    top: 78px;
-    left: 278px;
+    margin: auto;
 }
 
-#bricks-container {
+#button-outer {
+    height: 444px;
+    width: 444px;
     position: absolute;
-    top: 48px;
+    top: 78px;
+    left: 278px;
 }
 
 #lives-container {
