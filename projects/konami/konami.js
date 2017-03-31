@@ -4,9 +4,9 @@ $(document).ready(function () {
     var keylog = [],
         complete = false,
         lives = 3,
-        bonus = new Audio('./sounds/bonus.wav'),
-        life = new Audio('./sounds/1up.wav'),
-        win = new Audio('./sounds/win.wav')
+        bonus = new Audio('./bonus.wav'),
+        life = new Audio('./1up.wav'),
+        win = new Audio('./win.wav')
 
     $(document).keyup(function(event){
         if (!complete) {
